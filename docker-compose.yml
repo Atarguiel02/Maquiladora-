@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  maquila-hub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maquila_hub_app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATA_PROVIDER=mock
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Optional PostgreSQL instance prepared for future Supabase migration phase
+  postgres:
+    image: postgres:16-alpine
+    container_name: maquila_hub_postgres
+    environment:
+      POSTGRES_DB: maquila_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_secure_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

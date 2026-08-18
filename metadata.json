@@ -1,0 +1,6 @@
+{
+  "name": "MAQUILA HUB",
+  "description": "Plataforma empresarial de gestión integral para maquilas con experiencia moderna para la Generación Z, gamificación, control de producción en tiempo real y arquitectura desacoplada.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
