@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#090d16"/>
+  <circle cx="256" cy="256" r="180" fill="url(#grad)" opacity="0.15" />
+  
+  <!-- Modern Maquila Hexagon & Lightning Motif -->
+  <path d="M256 80 L390 155 L390 305 L256 380 L122 305 L122 155 Z" fill="none" stroke="url(#grad)" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+  
+  <!-- Gen Z Lightning / Speed Bolt -->
+  <path d="M276 130 L180 270 L250 270 L236 382 L332 242 L262 242 Z" fill="url(#glow)" filter="drop-shadow(0px 8px 16px rgba(34, 211, 238, 0.4))"/>
+</svg>
