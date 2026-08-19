@@ -13,7 +13,8 @@ import {
   socialService,
   reportService,
   aiAssistantService
-} from './src/server/services';
+} from './src/server/services/index';
+
 
 dotenv.config();
 
@@ -280,7 +281,7 @@ async function start() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 MAQUILA HUB Server running on http://0.0.0.0:${PORT} [Provider: ${process.env.DATA_PROVIDER || 'mock'}]`);
+    console.log(`🚀 MAQUILA HUB Server running on http://localhost:${PORT} [Provider: ${process.env.DATA_PROVIDER || 'mock'}]`);
   });
 }
 
